@@ -15,11 +15,11 @@ steps:
 - script: echo "Azure DevOps Pipeline triggered by GitHub."
   displayName: 'Echo pipeline start'
 
-- script: |
-    git clone https://github.com/rajeshmadaye/HelloWorldDotNet.git
-    cd HelloWorldDotNet/HelloWorldApp
-    dotnet build --configuration Release
-  displayName: 'Rebuild solution in Azure DevOps (optional)'
+# - script: |
+#     git clone https://github.com/rajeshmadaye/HelloWorldDotNet.git
+#     cd HelloWorldDotNet/HelloWorldApp
+#     dotnet build --configuration Release
+#   displayName: 'Rebuild solution in Azure DevOps (optional)'
 
 # - script: |
 #     echo "Deploying to Windows machine (self-hosted agent)."
