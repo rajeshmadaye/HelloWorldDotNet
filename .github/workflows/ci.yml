@@ -28,7 +28,7 @@ jobs:
 
       # OPTIONAL: Store the built artifacts in GitHub Actions
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: HelloWorldBuild
           path: ./publish
