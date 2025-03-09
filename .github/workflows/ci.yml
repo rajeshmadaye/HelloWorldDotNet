@@ -1,0 +1,44 @@
+name: Build and Trigger Azure DevOps
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build-and-trigger:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '6.0.x'
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --configuration Release
+
+      - name: Publish
+        run: dotnet publish --configuration Release --output ./publish
+
+      # OPTIONAL: Store the built artifacts in GitHub Actions
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: HelloWorldBuild
+          path: ./publish
+
+      - name: Trigger Azure DevOps pipeline
+        run: |
+          echo "Triggering Azure DevOps pipeline via REST API..."
+          # If you already have an Azure DevOps pipeline set up, you can call its endpoint directly:
+          curl --request POST \
+               --url https://dev.azure.com/<YOUR_ORG>/<YOUR_PROJECT>/_apis/pipelines/<PIPELINE_ID>/runs?api-version=6.0-preview.1 \
+               --header "Authorization: Basic ${{ secrets.AZURE_DEVOPS_PAT }}" \
+               --header "Content-Type: application/json" \
+               --data '{"resources": {"repositories": {"self": {"refName": "refs/heads/main"}}}}'
