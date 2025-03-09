@@ -21,8 +21,8 @@ steps:
     dotnet build --configuration Release
   displayName: 'Rebuild solution in Azure DevOps (optional)'
 
-- script: |
-    echo "Deploying to Windows machine (self-hosted agent)."
-    # Example: copy your published files to a target folder
-    dotnet publish --configuration Release --output C:\Deployments\HelloWorldApp
-  displayName: 'Deploy to local Windows path'
+# - script: |
+#     echo "Deploying to Windows machine (self-hosted agent)."
+#     # Example: copy your published files to a target folder
+#     dotnet publish --configuration Release --output C:\Deployments\HelloWorldApp
+#   displayName: 'Deploy to local Windows path'
