@@ -1,0 +1,14 @@
+C:\opt\dotnet\dotnet-sdk-9.0.200-win-x64\HelloWorldApp\bin\Debug\net9.0\HelloWorldApp.exe
+C:\opt\dotnet\dotnet-sdk-9.0.200-win-x64\HelloWorldApp\bin\Debug\net9.0\HelloWorldApp.deps.json
+C:\opt\dotnet\dotnet-sdk-9.0.200-win-x64\HelloWorldApp\bin\Debug\net9.0\HelloWorldApp.runtimeconfig.json
+C:\opt\dotnet\dotnet-sdk-9.0.200-win-x64\HelloWorldApp\bin\Debug\net9.0\HelloWorldApp.dll
+C:\opt\dotnet\dotnet-sdk-9.0.200-win-x64\HelloWorldApp\bin\Debug\net9.0\HelloWorldApp.pdb
+C:\opt\dotnet\dotnet-sdk-9.0.200-win-x64\HelloWorldApp\obj\Debug\net9.0\HelloWorldApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\opt\dotnet\dotnet-sdk-9.0.200-win-x64\HelloWorldApp\obj\Debug\net9.0\HelloWorldApp.AssemblyInfoInputs.cache
+C:\opt\dotnet\dotnet-sdk-9.0.200-win-x64\HelloWorldApp\obj\Debug\net9.0\HelloWorldApp.AssemblyInfo.cs
+C:\opt\dotnet\dotnet-sdk-9.0.200-win-x64\HelloWorldApp\obj\Debug\net9.0\HelloWorldApp.csproj.CoreCompileInputs.cache
+C:\opt\dotnet\dotnet-sdk-9.0.200-win-x64\HelloWorldApp\obj\Debug\net9.0\HelloWorldApp.dll
+C:\opt\dotnet\dotnet-sdk-9.0.200-win-x64\HelloWorldApp\obj\Debug\net9.0\refint\HelloWorldApp.dll
+C:\opt\dotnet\dotnet-sdk-9.0.200-win-x64\HelloWorldApp\obj\Debug\net9.0\HelloWorldApp.pdb
+C:\opt\dotnet\dotnet-sdk-9.0.200-win-x64\HelloWorldApp\obj\Debug\net9.0\HelloWorldApp.genruntimeconfig.cache
+C:\opt\dotnet\dotnet-sdk-9.0.200-win-x64\HelloWorldApp\obj\Debug\net9.0\ref\HelloWorldApp.dll
