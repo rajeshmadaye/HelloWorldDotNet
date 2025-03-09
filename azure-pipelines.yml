@@ -12,10 +12,17 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- script: echo "Azure DevOps Pipeline triggered by GitHub."
+  displayName: 'Echo pipeline start'
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    git clone https://github.com/rajeshmadaye/HelloWorldDotNet.git
+    cd HelloWorldDotNet/HelloWorldApp
+    dotnet build --configuration Release
+  displayName: 'Rebuild solution in Azure DevOps (optional)'
+
+- script: |
+    echo "Deploying to Windows machine (self-hosted agent)."
+    # Example: copy your published files to a target folder
+    dotnet publish --configuration Release --output C:\Deployments\HelloWorldApp
+  displayName: 'Deploy to local Windows path'
