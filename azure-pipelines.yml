@@ -5,6 +5,8 @@
 
 # trigger:
 # - master
+trigger: none  # We don't want this to automatically trigger on Azure DevOps commits
+pr: none       # Since GitHub is controlling when this runs
 
 pool:
   vmImage: ubuntu-latest
