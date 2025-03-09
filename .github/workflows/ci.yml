@@ -33,12 +33,12 @@ jobs:
           name: HelloWorldBuild
           path: ./publish
 
-      - name: Trigger Azure DevOps pipeline
-        run: |
-          echo "Triggering Azure DevOps pipeline via REST API..."
-          # If you already have an Azure DevOps pipeline set up, you can call its endpoint directly:
-          curl --request POST \
-               --url https://dev.azure.com/<YOUR_ORG>/<YOUR_PROJECT>/_apis/pipelines/<PIPELINE_ID>/runs?api-version=6.0-preview.1 \
-               --header "Authorization: Basic ${{ secrets.AZURE_DEVOPS_PAT }}" \
-               --header "Content-Type: application/json" \
-               --data '{"resources": {"repositories": {"self": {"refName": "refs/heads/main"}}}}'
+    #   - name: Trigger Azure DevOps pipeline
+    #     run: |
+    #       echo "Triggering Azure DevOps pipeline via REST API..."
+    #       # If you already have an Azure DevOps pipeline set up, you can call its endpoint directly:
+    #       curl --request POST \
+    #            --url https://dev.azure.com/<YOUR_ORG>/<YOUR_PROJECT>/_apis/pipelines/<PIPELINE_ID>/runs?api-version=6.0-preview.1 \
+    #            --header "Authorization: Basic ${{ secrets.AZURE_DEVOPS_PAT }}" \
+    #            --header "Content-Type: application/json" \
+    #            --data '{"resources": {"repositories": {"self": {"refName": "refs/heads/main"}}}}'
