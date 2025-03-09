@@ -1,0 +1,28 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+# trigger:
+# - master
+trigger: none  # We don't want this to automatically trigger on Azure DevOps commits
+pr: none       # Since GitHub is controlling when this runs
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo "Azure DevOps Pipeline triggered by GitHub."
+  displayName: 'Echo pipeline start'
+
+- script: |
+    git clone https://github.com/rajeshmadaye/HelloWorldDotNet.git
+    cd HelloWorldDotNet/HelloWorldApp
+    dotnet build --configuration Release
+  displayName: 'Rebuild solution in Azure DevOps (optional)'
+
+# - script: |
+#     echo "Deploying to Windows machine (self-hosted agent)."
+#     # Example: copy your published files to a target folder
+#     dotnet publish --configuration Release --output C:\Deployments\HelloWorldApp
+#   displayName: 'Deploy to local Windows path'
