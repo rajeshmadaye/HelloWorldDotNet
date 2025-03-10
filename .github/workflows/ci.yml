@@ -47,4 +47,5 @@ jobs:
 
           # Trigger the deployment pipeline (release) in Azure DevOps.
           # Replace "13749467692" with the artifact metadata value that you want to pass.
-          az pipelines release create --artifact-metadata-list github_compass_artifacts="13749467692" --definition-id 23 --description "Triggered from Github" --detect false --org https://dev.azure.com/AcronoticsIP --project "RADIUM"
+          # az pipelines release create --artifact-metadata-list github_compass_artifacts="13749467692" --definition-id 23 --description "Triggered from Github" --detect false --org https://dev.azure.com/AcronoticsIP --project "RADIUM"
+          az pipelines run --id 23 --branch master --parameters environment="dev" artifactPath="${{ github.run_number}}" --org https://dev.azure.com/AcronoticsIP --project "RADIUM" --detect false
