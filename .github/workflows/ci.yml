@@ -33,12 +33,18 @@ jobs:
           name: HelloWorldBuild
           path: ./publish
 
-      - name: Trigger Azure DevOps pipeline
+      - name: Trigger Azure DevOps Deployment
+        shell: pwsh
+        env:
+          AZURE_DEVOPS_PAT: ${{ secrets.AZURE_DEVOPS_PAT }}
         run: |
-          echo "Triggering Azure DevOps pipeline via REST API..."
-          # If you already have an Azure DevOps pipeline set up, you can call its endpoint directly:
-          curl --request POST \
-               --url https://dev.azure.com/AcronoticsIP/RADIUM/_apis/pipelines/23/runs?api-version=6.0-preview.1 \
-               --header "Authorization: Basic ${{ secrets.AZURE_DEVOPS_PAT }}" \
-               --header "Content-Type: application/json" \
-               --data '{"resources": {"repositories": {"self": {"refName": "refs/heads/main"}}}}'
+          # Check Azure CLI version and add the azure-devops extension
+          az --version
+          az extension add --name azure-devops
+
+          # Login to Azure DevOps using the PAT
+          echo $env:AZURE_DEVOPS_PAT | az devops login --organization https://dev.azure.com/AcronoticsIP
+
+          # Trigger the deployment pipeline (release) in Azure DevOps.
+          # Replace "13749467692" with the artifact metadata value that you want to pass.
+          az pipelines release create --artifact-metadata-list github_compass_artifacts="13749467692" --definition-id 23 --description "Triggered from Github" --detect false --org https://dev.azure.com/AcronoticsIP --project "RADIUM"
