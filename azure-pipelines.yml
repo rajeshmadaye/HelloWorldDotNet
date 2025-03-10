@@ -11,9 +11,13 @@ pr: none       # Since GitHub is controlling when this runs
 pool:
   vmImage: ubuntu-latest
 
-variables:
-  artifactPath: $(artifactPath)
-  environment: $(environment)
+parameters:
+- name: artifactPath
+  type: string
+  default: ''   # Or provide a default value
+- name: environment
+  type: string
+  default: ''   # Or provide a default value
 
 steps:
 - script: echo "Azure DevOps Pipeline triggered by GitHub."
